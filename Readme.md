@@ -39,7 +39,7 @@ The circuit was verified through **Transient Analysis** to ensure timing accurac
 │   ├── mapping.px             # Pin mapping file
 │   ├── README.md              # Project documentation
 │   └── /Reports               # Screenshots of Results & Waveforms
-
+```
 📝 How to Use
 Install eSim: Follow the instructions at esim.fossee.in.
 
