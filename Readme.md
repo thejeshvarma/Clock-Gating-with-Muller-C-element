@@ -43,8 +43,7 @@ The circuit was verified through **Transient Analysis** to ensure timing accurac
 📝 How to Use
 Install eSim: Follow the instructions at esim.fossee.in.
 
-Clone the Repo: ```bash
-git clone https://github.com/yourusername/Glitch-Free-Clock-Gating.git
+Clone the Repo:
 
 Open Project: Launch eSim and point the workspace to the cloned directory.
 
