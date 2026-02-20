@@ -1,0 +1,314 @@
+EESchema Schematic File Version 2
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:power
+LIBS:eSim_Plot
+LIBS:transistors
+LIBS:conn
+LIBS:eSim_User
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:eSim_Analog
+LIBS:eSim_Devices
+LIBS:eSim_Digital
+LIBS:eSim_Hybrid
+LIBS:eSim_Miscellaneous
+LIBS:eSim_Power
+LIBS:eSim_Sources
+LIBS:eSim_Subckt
+LIBS:eSim_Nghdl
+LIBS:eSim_Ngveri
+LIBS:eSim_SKY130
+LIBS:eSim_SKY130_Subckts
+LIBS:Clock_Gating_with_Muller_C-cache
+EELAYER 25 0
+EELAYER END
+$Descr User 13811 5921
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L muller_c U3
+U 1 1 6972510B
+P 2950 4100
+F 0 "U3" H 5800 5900 60  0000 C CNN
+F 1 "muller_c" H 5800 6100 60  0000 C CNN
+F 2 "" H 5800 6050 60  0000 C CNN
+F 3 "" H 5800 6050 60  0000 C CNN
+	1    2950 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L muller_c U6
+U 1 1 697252A0
+P 4900 4200
+F 0 "U6" H 7750 6000 60  0000 C CNN
+F 1 "muller_c" H 7750 6200 60  0000 C CNN
+F 2 "" H 7750 6150 60  0000 C CNN
+F 3 "" H 7750 6150 60  0000 C CNN
+	1    4900 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L d_buffer U7
+U 1 1 697255C8
+P 5950 3500
+F 0 "U7" H 5950 3450 60  0000 C CNN
+F 1 "d_buffer" H 5950 3550 60  0000 C CNN
+F 2 "" H 5950 3500 60  0000 C CNN
+F 3 "" H 5950 3500 60  0000 C CNN
+	1    5950 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L d_inverter U5
+U 1 1 69725689
+P 4450 2400
+F 0 "U5" H 4450 2300 60  0000 C CNN
+F 1 "d_inverter" H 4450 2550 60  0000 C CNN
+F 2 "" H 4500 2350 60  0000 C CNN
+F 3 "" H 4500 2350 60  0000 C CNN
+	1    4450 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pulse v1
+U 1 1 697365C2
+P 1950 2450
+F 0 "v1" H 1750 2550 60  0000 C CNN
+F 1 "pulse" H 1750 2400 60  0000 C CNN
+F 2 "R1" H 1650 2450 60  0000 C CNN
+F 3 "" H 1950 2450 60  0000 C CNN
+	1    1950 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L pulse v2
+U 1 1 69736688
+P 2000 3150
+F 0 "v2" H 1800 3250 60  0000 C CNN
+F 1 "pulse" H 1800 3100 60  0000 C CNN
+F 2 "R1" H 1700 3150 60  0000 C CNN
+F 3 "" H 2000 3150 60  0000 C CNN
+	1    2000 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 697366E5
+P 1250 2450
+F 0 "#PWR01" H 1250 2200 50  0001 C CNN
+F 1 "GND" H 1250 2300 50  0000 C CNN
+F 2 "" H 1250 2450 50  0001 C CNN
+F 3 "" H 1250 2450 50  0001 C CNN
+	1    1250 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 6973670B
+P 1250 3150
+F 0 "#PWR02" H 1250 2900 50  0001 C CNN
+F 1 "GND" H 1250 3000 50  0000 C CNN
+F 2 "" H 1250 3150 50  0001 C CNN
+F 3 "" H 1250 3150 50  0001 C CNN
+	1    1250 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1250 2450 1500 2450
+Wire Wire Line
+	1250 3150 1550 3150
+$Comp
+L d_and U9
+U 1 1 6973696A
+P 9950 2950
+F 0 "U9" H 9950 2950 60  0000 C CNN
+F 1 "d_and" H 10000 3050 60  0000 C CNN
+F 2 "" H 9950 2950 60  0000 C CNN
+F 3 "" H 9950 2950 60  0000 C CNN
+	1    9950 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 2300 8700 2300
+Wire Wire Line
+	8700 2300 8700 2550
+$Comp
+L d_buffer U8
+U 1 1 69736A83
+P 8050 3500
+F 0 "U8" H 8050 3450 60  0000 C CNN
+F 1 "d_buffer" H 8050 3550 60  0000 C CNN
+F 2 "" H 8050 3500 60  0000 C CNN
+F 3 "" H 8050 3500 60  0000 C CNN
+	1    8050 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L adc_bridge_2 U4
+U 1 1 69736D82
+P 3250 2800
+F 0 "U4" H 3250 2800 60  0000 C CNN
+F 1 "adc_bridge_2" H 3250 2950 60  0000 C CNN
+F 2 "" H 3250 2800 60  0000 C CNN
+F 3 "" H 3250 2800 60  0000 C CNN
+	1    3250 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2450 2650 2450
+Wire Wire Line
+	2650 2450 2650 2750
+Wire Wire Line
+	2450 3150 2650 3150
+Wire Wire Line
+	2650 2850 2650 3400
+Wire Wire Line
+	3800 2750 4100 2750
+Wire Wire Line
+	4100 2750 4100 2400
+Wire Wire Line
+	4100 2400 4150 2400
+Wire Wire Line
+	4750 2400 4750 2200
+Wire Wire Line
+	4750 2200 5100 2200
+Wire Wire Line
+	3800 2850 4800 2850
+Wire Wire Line
+	4800 2850 4800 2300
+Wire Wire Line
+	4800 2300 5100 2300
+Wire Wire Line
+	4000 3550 5450 3550
+Wire Wire Line
+	4000 3550 4000 2750
+Connection ~ 4000 2750
+Wire Wire Line
+	5450 3550 5450 3500
+Wire Wire Line
+	6600 3500 7550 3500
+Wire Wire Line
+	6900 3500 6900 2400
+Wire Wire Line
+	6900 2400 7050 2400
+Wire Wire Line
+	6500 2200 6800 2200
+Wire Wire Line
+	6800 2200 6800 2300
+Wire Wire Line
+	6800 2300 7050 2300
+Connection ~ 6900 3500
+Wire Wire Line
+	8700 3500 9300 3500
+Wire Wire Line
+	9300 3500 9300 2950
+Wire Wire Line
+	9300 2950 9500 2950
+Wire Wire Line
+	8700 2550 9250 2550
+Wire Wire Line
+	9250 2550 9250 2850
+Wire Wire Line
+	9250 2850 9500 2850
+$Comp
+L dac_bridge_1 U10
+U 1 1 6973761F
+P 11250 2950
+F 0 "U10" H 11250 2950 60  0000 C CNN
+F 1 "dac_bridge_1" H 11250 3100 60  0000 C CNN
+F 2 "" H 11250 2950 60  0000 C CNN
+F 3 "" H 11250 2950 60  0000 C CNN
+	1    11250 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 2900 10400 2900
+Text GLabel 2600 2450 1    60   Input ~ 0
+clk
+Text GLabel 2550 3150 1    60   Input ~ 0
+en
+$Comp
+L plot_v1 U1
+U 1 1 69737787
+P 2500 2550
+F 0 "U1" H 2500 3050 60  0000 C CNN
+F 1 "plot_v1" H 2700 2900 60  0000 C CNN
+F 2 "" H 2500 2550 60  0000 C CNN
+F 3 "" H 2500 2550 60  0000 C CNN
+	1    2500 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 2350 2500 2450
+Connection ~ 2500 2450
+$Comp
+L plot_v1 U2
+U 1 1 69737AB7
+P 2650 3200
+F 0 "U2" H 2650 3700 60  0000 C CNN
+F 1 "plot_v1" H 2850 3550 60  0000 C CNN
+F 2 "" H 2650 3200 60  0000 C CNN
+F 3 "" H 2650 3200 60  0000 C CNN
+	1    2650 3200
+	-1   0    0    1   
+$EndComp
+Connection ~ 2650 3150
+$Comp
+L plot_v1 U11
+U 1 1 69737C3E
+P 11950 2900
+F 0 "U11" H 11950 3400 60  0000 C CNN
+F 1 "plot_v1" H 12150 3250 60  0000 C CNN
+F 2 "" H 11950 2900 60  0000 C CNN
+F 3 "" H 11950 2900 60  0000 C CNN
+	1    11950 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11800 2900 12150 2900
+Text GLabel 12000 2900 1    60   Output ~ 0
+clkg
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 69737D62
+P 1400 2350
+F 0 "#FLG03" H 1400 2425 50  0001 C CNN
+F 1 "PWR_FLAG" H 1400 2500 50  0000 C CNN
+F 2 "" H 1400 2350 50  0001 C CNN
+F 3 "" H 1400 2350 50  0001 C CNN
+	1    1400 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 2350 1400 2450
+Connection ~ 1400 2450
+$EndSCHEMATC

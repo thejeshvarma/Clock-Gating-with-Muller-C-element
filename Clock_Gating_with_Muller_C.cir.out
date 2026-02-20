@@ -1,0 +1,50 @@
+* c:\users\theje\esim-workspace\clock_gating_with_muller_c\clock_gating_with_muller_c.cir
+
+* u3  net-_u3-pad1_ net-_u3-pad2_ net-_u3-pad3_ muller_c
+* u6  net-_u3-pad3_ net-_u6-pad2_ net-_u6-pad3_ muller_c
+* u7  net-_u4-pad3_ net-_u6-pad2_ d_buffer
+* u5  net-_u4-pad3_ net-_u3-pad1_ d_inverter
+v1  clk gnd pulse(0 5 0 10n 10n 0.5u 1u)
+v2  en gnd pulse(0 5 0.75u 10n 10n 10u 25u)
+* u9  net-_u6-pad3_ net-_u8-pad2_ net-_u10-pad1_ d_and
+* u8  net-_u6-pad2_ net-_u8-pad2_ d_buffer
+* u4  clk en net-_u4-pad3_ net-_u3-pad2_ adc_bridge_2
+* u10  net-_u10-pad1_ clkg dac_bridge_1
+* u1  clk plot_v1
+* u2  en plot_v1
+* u11  clkg plot_v1
+a1 [net-_u3-pad1_ ] [net-_u3-pad2_ ] [net-_u3-pad3_ ] u3
+a2 [net-_u3-pad3_ ] [net-_u6-pad2_ ] [net-_u6-pad3_ ] u6
+a3 net-_u4-pad3_ net-_u6-pad2_ u7
+a4 net-_u4-pad3_ net-_u3-pad1_ u5
+a5 [net-_u6-pad3_ net-_u8-pad2_ ] net-_u10-pad1_ u9
+a6 net-_u6-pad2_ net-_u8-pad2_ u8
+a7 [clk en ] [net-_u4-pad3_ net-_u3-pad2_ ] u4
+a8 [net-_u10-pad1_ ] [clkg ] u10
+* Schematic Name:                             muller_c, NgSpice Name: muller_c
+.model u3 muller_c(rise_delay=50n fall_delay=50n input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             muller_c, NgSpice Name: muller_c
+.model u6 muller_c(rise_delay=50n fall_delay=50n input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             d_buffer, NgSpice Name: d_buffer
+.model u7 d_buffer(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 ) 
+* Schematic Name:                             d_inverter, NgSpice Name: d_inverter
+.model u5 d_inverter(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 ) 
+* Schematic Name:                             d_and, NgSpice Name: d_and
+.model u9 d_and(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 ) 
+* Schematic Name:                             d_buffer, NgSpice Name: d_buffer
+.model u8 d_buffer(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 ) 
+* Schematic Name:                             adc_bridge_2, NgSpice Name: adc_bridge
+.model u4 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u10 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+.tran 10e-09 20e-06 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(clkg) v(clk)+10 v(en) +20
+
+.endc
+.end
